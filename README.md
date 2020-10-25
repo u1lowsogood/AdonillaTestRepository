@@ -15,13 +15,13 @@
 ```bash
 git init
 ```
-* ローカルリポジトリのIndex（変更点とか書かれてる？やつ）にファイルを追加
+* ローカルリポジトリにファイルを追加
 ```bash
 git add [ファイル名].txt
 git commit -m "説明文"
 ```
 
-* リポジトリ「AdonillaTestRepository」に参加？
+* リポジトリ「AdonillaTestRepository」に参加
 ```bash
 git remote add origin https://github.com/u1lowsogood/AdonillaTestRepository.git
 ```
