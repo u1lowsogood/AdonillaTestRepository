@@ -37,7 +37,7 @@ async def on_message(message):
     #await message.channel.send(talk)
 
         # JOIN VC
-    if message.content == ('金玉燃やすぞ') or message.content == ('全召喚') :
+    if message.content == ('金玉燃やすぞ') or message.content == ('全召喚') or message.content == ('tamago'):
         vcstate = message.author.voice
 
         if (not vcstate) or (not vcstate.channel):
