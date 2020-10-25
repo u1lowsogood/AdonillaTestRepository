@@ -22,12 +22,12 @@ git add [ファイル名].txt
 git commit -m "説明文"
 ```
 
-* リポジトリ「AdonillaTestRepository」に参加
+* リモートリポジトリ「AdonillaTestRepository」に参加
 ```bash
 git remote add origin https://github.com/u1lowsogood/AdonillaTestRepository.git
 ```
 
-* ローカルリポジトリのファイルをgitに送信！
+* ローカルリポジトリのファイルをリモートリポジトリ「AdonillaTestRepository」に送信！
 ```bash
 git push origin master
 ```
