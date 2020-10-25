@@ -2,9 +2,9 @@
 import discord
 
 #コントローラ読み込み
-from . import MainController
+from controller import MainController
 #モデルファイル読み込み
-from . import MainModel
+from model import MainModel
 
 
 # Botのアクセストークン
