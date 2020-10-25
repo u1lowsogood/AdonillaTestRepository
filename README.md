@@ -9,6 +9,11 @@
 
 # アドンイラプッシャー備忘録
 
+* リモートリポジトリからファイルを落としてくる
+```bash
+git pull https://github.com/u1lowsogood/AdonillaTestRepository.git master
+```
+
 * ローカルリポジトリを作成
 ```bash
 git init
@@ -19,7 +24,7 @@ git add [ファイル名].txt
 git commit -m "説明文"
 ```
 
-* リモートリポジトリ「AdonillaTestRepository」に参加
+* リモートリポジトリ「AdonillaTestRepository」に参加（既に参加してる場合は不要）
 ```bash
 git remote add origin https://github.com/u1lowsogood/AdonillaTestRepository.git
 ```
