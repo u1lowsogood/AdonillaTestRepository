@@ -18,15 +18,15 @@ git init
 git remote add origin https://github.com/u1lowsogood/AdonillaTestRepository.git
 ```
 
+* リモートリポジトリからファイルを落としてくる（pushの前に必ずこれをやること）
+```bash
+git pull https://github.com/u1lowsogood/AdonillaTestRepository.git master
+```
+
 * ローカルリポジトリにファイルを追加
 ```bash
 git add [ファイル名].txt
 git commit -m "説明文"
-```
-
-* リモートリポジトリからファイルを落としてくる（pushの前に必ずこれをやること）
-```bash
-git pull https://github.com/u1lowsogood/AdonillaTestRepository.git master
 ```
 
 * ローカルリポジトリのファイルをリモートリポジトリ「AdonillaTestRepository」に送信！
