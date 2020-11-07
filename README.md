@@ -20,7 +20,7 @@
 
 ```DiscordBot```ファイルの中にある```execute.py```を実行すると、以下のファイルが一つにまとまります。
 
-```DiscordBot -> source -> controller```の中身ファイル（各イベントに対する処理が描いてあるぞ！）
+```DiscordBot -> source -> controller```の中身ファイル（各イベントに対する処理が描いてあるぞ！）<br>
 ```DiscordBot -> source -> core```の中身（```import.py``` ```clienrRun.py```）
 
 上記ファイルを無理やり１つのファイルに結合し、出力された```output.py```を実行することによって、BOTが動作します。
