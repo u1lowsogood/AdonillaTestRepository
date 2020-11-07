@@ -6,7 +6,7 @@
 前回と仕様が大幅に変わったのでチェック必須。<br><br><br>
 ## どうすればいいの？  
 基本的に、アドンイラ開発部門メンバーの皆さんが作業するのは、次のフォルダの内になると思います。  
-```DiscordBot -> source -> controller```  <br>
+```DiscordBot -> source -> controller```  <br><br>
 ```controller```内にあるファイルは全て、@client.event毎に分割されています  
 
 例えば、ログイン時に何かしらの処理を追加したいのであれば、そのフォルダの中にある```on_ready.py```を、  
