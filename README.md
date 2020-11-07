@@ -41,7 +41,7 @@ git init
 git remote add origin https://github.com/u1lowsogood/AdonillaTestRepository.git
 ```
 
-* リモートリポジトリからファイルを落としてくる（pushの前に必ずこれをやること）
+* リモートリポジトリからファイルを落としてくる（pushの前に必ずこれをやるのかな？）
 ```bash
 git pull https://github.com/u1lowsogood/AdonillaTestRepository.git master
 ```
