@@ -1,36 +1,35 @@
-#import なんかインポートして
-import datetime
+#### ON_MESSAGE_START ####
 
-#まいんこんとろーら
+@client.event
+async def on_message(message):
+    
+    if message.author == client.user:
+        return
 
-def MainProgram(discord_id, message):
-
-        # JOIN VC
+    # ボイスチャットに入る
     if message.content == ('金玉燃やすぞ') or message.content == ('全召喚') or message.content == ('tamago'):
         vcstate = message.author.voice
 
         if (not vcstate) or (not vcstate.channel):
-            return "金玉どこだよ"
+            await message.channel.send("金玉どこだよ")
 
         voicechannel = vcstate.channel
-
-        voicechannel.connect()
+        await voicechannel.connect()
         activity = discord.Activity(
             name='【ケツ穴拡張！？ドスケベマンコRoyal】Solo - Squad 4/3 残糞：残り(一億 人) ', type=discord.ActivityType.watching)
 
-        client.change_presence(activity=activity)
+        await client.change_presence(activity=activity)
+        await message.channel.send('うるさいうるさいうるさいうるさいうるさいうるさいうるさいうるさい')
 
-        return 'うるさいうるさいうるさいうるさいうるさいうるさいうるさいうるさい'
-
-    # LEAVE VC
+    # ボイチャぬける
     if message.content == ('金玉叩き割ったわ'):
         vcclient = message.guild.voice_client
 
         if not vcclient:
-            return "うるさいうるさいうるさいうるさいうるさいうるさいうるさいうるさい"
+            await message.channel.send('うるさいうるさいうるさいうるさいうるさいうるさいうるさいうるさい')
 
-        vcclient.disconnect()
-        return 'うるさいうるさいうるさいうるさいうるさいうるさいうるさいうるさいうるさいうるさい'
+        await vcclient.disconnect()
+        await message.channel.send('うるさいうるさいうるさいうるさいうるさいうるさいうるさいうるさい')
 
     if message.content == ('atAoki'):
         jstart_dt = datetime.datetime.now()
@@ -41,6 +40,8 @@ def MainProgram(discord_id, message):
         a_h, a_m = divmod(a_m, 60)
 
         r_jat_time = 'あと' + str(jat_time.days) + '日' + str(a_h) + '時間' + str(a_m) + '分' + str(a_s) + '秒' + str(jat_time.microseconds)
-        return r_jat_time
+        await message.channel.send(r_jat_time)
 
-    return ''
+#### ON_MESSAGE_END ####
+
+
