@@ -48,38 +48,37 @@ async def on_message(message):
         #変換内容がない(aiコマンドのみ)の場合はreturnします
         if len(message.content) < 4:
             await message.channel.send("変換内容を入力してください")
-            return
-
-        aistr = message.content[3:]
-        aistr_listed = list(aistr)
-        for i, x in enumerate(aistr_listed): #正直ここenumerateじゃなくてもいいのかも知れない
-            if x == "い":
-                aistr_listed[i] = "あい" #この沼コードスッキリさせる方法あったら教えて下さい
-            elif x == "き":
-                aistr_listed[i] = "かい"
-            elif x == "し":
-                aistr_listed[i] = "さい"
-            elif x == "ち":
-                aistr_listed[i] = "たい"
-            elif x == "に":
-                aistr_listed[i] = "ない"
-            elif x == "ひ":
-                aistr_listed[i] = "はい"
-            elif x == "み":
-                aistr_listed[i] = "まい"
-            elif x == "り":
-                aistr_listed[i] = "らい"
-            elif x == "ぎ":
-                aistr_listed[i] = "がい"
-            elif x == "じ":
-                aistr_listed[i] = "ざい"
-            elif x == "ぢ":
-                aistr_listed[i] = "だい"
-            elif x == "び":
-                aistr_listed[i] = "ばい"
-            elif x == "ぴ":
-                aistr_listed[i] = "ぱい"
-        await message.channel.send("".join(aistr_listed))
+        else:
+            aistr = message.content[3:]
+            aistr_listed = list(aistr)
+            for i, x in enumerate(aistr_listed): #正直ここenumerateじゃなくてもいいのかも知れない
+                if x == "い":
+                    aistr_listed[i] = "あい" #この沼コードスッキリさせる方法あったら教えて下さい
+                elif x == "き":
+                    aistr_listed[i] = "かい"
+                elif x == "し":
+                    aistr_listed[i] = "さい"
+                elif x == "ち":
+                    aistr_listed[i] = "たい"
+                elif x == "に":
+                    aistr_listed[i] = "ない"
+                elif x == "ひ":
+                    aistr_listed[i] = "はい"
+                elif x == "み":
+                    aistr_listed[i] = "まい"
+                elif x == "り":
+                    aistr_listed[i] = "らい"
+                elif x == "ぎ":
+                    aistr_listed[i] = "がい"
+                elif x == "じ":
+                    aistr_listed[i] = "ざい"
+                elif x == "ぢ":
+                    aistr_listed[i] = "だい"
+                elif x == "び":
+                    aistr_listed[i] = "ばい"
+                elif x == "ぴ":
+                    aistr_listed[i] = "ぱい"
+            await message.channel.send("".join(aistr_listed))
 
     #たまご or tamago or eggを含む文章に:egg:のリアクションをつけます 実装者:Pencily
     if "たまご" in message.content or "tamago" in message.content or "egg" in message.content:
