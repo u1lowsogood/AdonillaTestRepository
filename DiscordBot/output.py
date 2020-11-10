@@ -24,8 +24,13 @@ async def on_message(message):
     if message.author == client.user:
         return
 
+<<<<<<< HEAD:DiscordBot/main.py
+        # JOIN VC
+    if message.content == ('金玉燃やすぞ') or message.content == ('全召喚'):
+=======
     # ボイスチャットに入る
     if message.content == ('金玉燃やすぞ') or message.content == ('全召喚') or message.content == ('tamago'):
+>>>>>>> 2dab760e6a9bafc9205b86afc4769114bd6afaee:DiscordBot/output.py
         vcstate = message.author.voice
 
         if (not vcstate) or (not vcstate.channel):
