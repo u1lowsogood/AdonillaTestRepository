@@ -45,7 +45,7 @@ async def on_message(message):
     #い行変換コマンド 実装者:Pencily
     #3文字目は認識しない仕様です
     if message.content[0:2] == "ai":
-        #変換内容がない(aiコマンドのみ)の場合はreturnします
+        #変換内容がない(aiコマンドのみ)の場合は実行されません
         if len(message.content) < 4:
             await message.channel.send("変換内容を入力してください")
         else:
