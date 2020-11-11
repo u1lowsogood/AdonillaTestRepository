@@ -50,7 +50,6 @@ async def on_message(message):
             await message.channel.send("膣膣膣膣膣膣膣膣膣膣膣膣膣膣")
         else:
             uestr = message.content[3:]
-            retstr = ""
             dumbdic = {
             "あ":"アナル","い":"インポ","う":"ウンコ","え":"エロ","お":"オマンコ",
             "か":"カントン","き":"金玉","ク":"クリトリス","け":"ケツ","コ":"コンドーム",
@@ -63,9 +62,7 @@ async def on_message(message):
             "ら":"乱交","り":"凌辱","る":"ルナルナ","れ":"レイプ","ろ":"ロリ",
             "わ":"和姦","を":"ヲタサー","ん":"ンジャメナ"
                 }
-            for k,v in dumbdic.items():
-                uestr.replace(k,v)
-            await message.channel.send(retstr)
+            await message.channel.send(uestr.translate(str.maketrans(dumbdic))
 
     #い行変換コマンド 実装者:Pencily
     #3文字目は認識しない仕様です
