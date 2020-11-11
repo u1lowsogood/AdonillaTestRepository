@@ -110,5 +110,3 @@ async def on_message(message):
         await message.add_reaction("\U0001F95A")
 
 #### ON_MESSAGE_END ####
-
-
