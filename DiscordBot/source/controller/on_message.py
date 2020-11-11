@@ -62,10 +62,9 @@ async def on_message(message):
             "や":"ヤリサー","ゆ":"ゆういちろう","よ":"嫁",
             "ら":"乱交","り":"凌辱","る":"ルナルナ","れ":"レイプ","ろ":"ロリ",
             "わ":"和姦","を":"ヲタサー","ん":"ンジャメナ"
-                }     
+                }
             for k,v in dumbdic.items():
-                if k in uestr:
-                    retstr = retstr + v
+                uestr.replace(k,v)
             await message.channel.send(retstr)
 
     #い行変換コマンド 実装者:Pencily
