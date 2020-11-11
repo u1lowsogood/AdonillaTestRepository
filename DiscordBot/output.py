@@ -73,6 +73,7 @@ async def on_message(message):
             "ら":"乱交","り":"凌辱","る":"ルナルナ","れ":"レイプ","ろ":"ロリ",
             "わ":"和姦","を":"ヲタサー","ん":"ンジャメナ"
             }
+
     #躁アナル 実装者:Yuichi
     #コードパクリ元: Pencily
     if message.content[0:2] == "ue":
@@ -81,6 +82,7 @@ async def on_message(message):
         else:
             uestr = message.content[3:]
             await message.channel.send(uestr.translate(str.maketrans(dumbdic)))
+
     #鬱アナル 実装者:Yuichi
     #コードパクリ元: Pencily
     if message.content[0:2] == "eu":
@@ -88,10 +90,9 @@ async def on_message(message):
             await message.channel.send("膣膣膣膣膣膣膣膣膣膣膣膣膣膣")
         else:
             uestr = message.content[3:]
-            dicdumb = {}
             for k,v in dumbdic.items():
-                dicdumb[v] = k
-            await message.channel.send(uestr.translate(str.maketrans(dicdumb)))
+                uestr = uestr.replace(v, k)
+            await message.channel.send(uestr)
 
     #い行変換コマンド 実装者:Pencily
     #3文字目は認識しない仕様です
