@@ -42,15 +42,8 @@ async def on_message(message):
         r_jat_time = 'あと' + str(jat_time.days) + '日' + str(a_h) + '時間' + str(a_m) + '分' + str(a_s) + '秒' + str(jat_time.microseconds)
         await message.channel.send(r_jat_time)
 
-    #躁アナル 実装者:Yuichi
-    #コードパクリ元: Pencily
-    if message.content[0:2] == "ue":
-    #変換内容がない(aiコマンドのみ)の場合は実行されません
-        if len(message.content) < 4:
-            await message.channel.send("膣膣膣膣膣膣膣膣膣膣膣膣膣膣")
-        else:
-            uestr = message.content[3:]
-            dumbdic = {
+    #スケベ単語辞書
+    dumbdic = {
             "あ":"アナル","い":"インポ","う":"ウンコ","え":"エロ","お":"オマンコ",
             "か":"カントン","き":"金玉","ク":"クリトリス","け":"ケツ","コ":"コンドーム",
             "さ":"ザーメン","し":"尺八","す":"スカルファック","せ":"セックス","そ":"ソープランド",
@@ -62,7 +55,25 @@ async def on_message(message):
             "ら":"乱交","り":"凌辱","る":"ルナルナ","れ":"レイプ","ろ":"ロリ",
             "わ":"和姦","を":"ヲタサー","ん":"ンジャメナ"
             }
+    #躁アナル 実装者:Yuichi
+    #コードパクリ元: Pencily
+    if message.content[0:2] == "ue":
+        if len(message.content) < 4:
+            await message.channel.send("膣膣膣膣膣膣膣膣膣膣膣膣膣膣")
+        else:
+            uestr = message.content[3:]
             await message.channel.send(uestr.translate(str.maketrans(dumbdic)))
+    #鬱アナル 実装者:Yuichi
+    #コードパクリ元: Pencily
+    if message.content[0:2] == "eu":
+        if len(message.content) < 4:
+            await message.channel.send("膣膣膣膣膣膣膣膣膣膣膣膣膣膣")
+        else:
+            uestr = message.content[3:]
+            dicdumb = {}
+            for k,v in dumbdic.items():
+                dicdumb[v] = k
+            await message.channel.send(uestr.translate(str.maketrans(dicdumb)))
 
     #い行変換コマンド 実装者:Pencily
     #3文字目は認識しない仕様です

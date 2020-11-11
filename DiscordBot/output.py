@@ -79,8 +79,8 @@ async def on_message(message):
             "や":"ヤリサー","ゆ":"ゆういちろう","よ":"嫁",
             "ら":"乱交","り":"凌辱","る":"ルナルナ","れ":"レイプ","ろ":"ロリ",
             "わ":"和姦","を":"ヲタサー","ん":"ンジャメナ"
-                }
-            await message.channel.send(uestr.translate(str.maketrans(dumbdic))
+            }
+            await message.channel.send(uestr.translate(str.maketrans(dumbdic)))
 
     #い行変換コマンド 実装者:Pencily
     #3文字目は認識しない仕様です
