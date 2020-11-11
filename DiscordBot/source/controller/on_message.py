@@ -70,9 +70,7 @@ async def on_message(message):
             await message.channel.send("膣膣膣膣膣膣膣膣膣膣膣膣膣膣")
         else:
             uestr = message.content[3:]
-            dicdumb = {}
-            for k,v in dumbdic.items():
-                dicdumb[v] = k
+            dicdumb = {v: k for k, v in dumbdic.items()}
             await message.channel.send(uestr.translate(str.maketrans(dicdumb)))
 
     #い行変換コマンド 実装者:Pencily
