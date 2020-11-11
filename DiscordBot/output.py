@@ -68,7 +68,6 @@ async def on_message(message):
             await message.channel.send("膣膣膣膣膣膣膣膣膣膣膣膣膣膣")
         else:
             uestr = message.content[3:]
-            retstr = ""
             dumbdic = {
             "あ":"アナル","い":"インポ","う":"ウンコ","え":"エロ","お":"オマンコ",
             "か":"カントン","き":"金玉","ク":"クリトリス","け":"ケツ","コ":"コンドーム",
@@ -80,11 +79,8 @@ async def on_message(message):
             "や":"ヤリサー","ゆ":"ゆういちろう","よ":"嫁",
             "ら":"乱交","り":"凌辱","る":"ルナルナ","れ":"レイプ","ろ":"ロリ",
             "わ":"和姦","を":"ヲタサー","ん":"ンジャメナ"
-                }     
-            for k,v in dumbdic.items():
-                if k in uestr:
-                    retstr = retstr + v
-            await message.channel.send(retstr)
+                }
+            await message.channel.send(uestr.translate(str.maketrans(dumbdic))
 
     #い行変換コマンド 実装者:Pencily
     #3文字目は認識しない仕様です
@@ -129,8 +125,6 @@ async def on_message(message):
         await message.add_reaction("\U0001F95A")
 
 #### ON_MESSAGE_END ####
-
-
 # ゆういちのローカルファイルからトークンを取得
 f = open('D:\\Git\\botoken.txt', 'r', encoding='UTF-8')
 token = f.read()
