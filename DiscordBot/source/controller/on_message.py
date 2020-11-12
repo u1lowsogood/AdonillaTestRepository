@@ -76,43 +76,35 @@ async def on_message(message):
                 uestr = uestr.replace(v, k)
             await message.channel.send(uestr)
 
+    #aiコマンド変換用辞書
+    ai_dictionary = {
+        "い":"あい", "き":"かい", "し":"さい", "ち":"たい", "に":"ない", 
+        "ひ":"はい", "み":"まい", "り":"らい", "ぎ":"がい", "じ":"ざい", 
+        "ぢ":"だい", "び":"ばい", "ぴ":"ぱい"
+    }
     #い行変換コマンド 実装者:Pencily
-    #3文字目は認識しない仕様です
+    #3文字目は半角空白でないと実行されません
     if message.content[0:2] == "ai":
         #変換内容がない(aiコマンドのみ)の場合は実行されません
-        if len(message.content) < 4:
+        if len(message.content) < 3:
             await message.channel.send("変換内容を入力してください")
+        elif message.content[2] != " ":
+            await message.channel.send("コマンドと本文の間に半角空白を挿入してください")
         else:
             aistr = message.content[3:]
-            aistr_listed = list(aistr)
-            for i, x in enumerate(aistr_listed): #正直ここenumerateじゃなくてもいいのかも知れない
-                if x == "い":
-                    aistr_listed[i] = "あい" #この沼コードスッキリさせる方法あったら教えて下さい
-                elif x == "き":
-                    aistr_listed[i] = "かい"
-                elif x == "し":
-                    aistr_listed[i] = "さい"
-                elif x == "ち":
-                    aistr_listed[i] = "たい"
-                elif x == "に":
-                    aistr_listed[i] = "ない"
-                elif x == "ひ":
-                    aistr_listed[i] = "はい"
-                elif x == "み":
-                    aistr_listed[i] = "まい"
-                elif x == "り":
-                    aistr_listed[i] = "らい"
-                elif x == "ぎ":
-                    aistr_listed[i] = "がい"
-                elif x == "じ":
-                    aistr_listed[i] = "ざい"
-                elif x == "ぢ":
-                    aistr_listed[i] = "だい"
-                elif x == "び":
-                    aistr_listed[i] = "ばい"
-                elif x == "ぴ":
-                    aistr_listed[i] = "ぱい"
-            await message.channel.send("".join(aistr_listed))
+            await message.channel.send(aistr.translate(str.maketrans(ai_dictionary)))
+
+    #デコーダー 仕様は上記と同じ
+    if message.content[0:2] == "ia":
+        if len(message.content) < 3:
+            await message.channel.send("デコード内容を入力してください")
+        elif message.content[2] != " ":
+            await message.channel.send("コマンドと本文の間に半角空白を挿入してください")
+        else:
+            iastr = message.content[3:]
+            for iato, iafrom in ai_dictionary.items():
+                iastr = iastr.replace(iafrom, iato)
+            await message.channel.send(iastr)
 
     #たまご or tamago or eggを含む文章に:egg:のリアクションをつけます 実装者:Pencily
     if "たまご" in message.content or "tamago" in message.content or "egg" in message.content:
